@@ -34,8 +34,11 @@ h4 {
     @apply bg-white p-7 rounded-xl max-w-5xl flex
 }
 
+
+
+
 .tab{
-    @apply hidden w-[450px]
+    @apply hidden ml-28 mt-10 mr-24 h-full
 }
 
 .subHeading{

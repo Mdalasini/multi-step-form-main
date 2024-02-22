@@ -7,15 +7,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Multi-step form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <form action="" id="setup">
+  <form action="" id="setupForm">
 
     <!-- Step 1 start -->
     <div id="info" class="tab">
@@ -27,7 +22,7 @@
       <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
       <label for="number">Phone Number</label>
       <input type="number" id="number" placeholder="e.g. +1 234 567 890" required>
-      <input type="submit" class="primaryBtn" value="Next Step">
+      <input type="button" class="primaryBtn" value="Next Step" onclick="nextTab(1)">
     </div>
     <!-- Step 1 end -->
 
@@ -70,7 +65,7 @@
       <!-- Submission -->
       <div>
         <input type="button" class="secondaryBtn" value="Go Back">
-        <input type="submit" class="primaryBtn" value="Next Step">
+        <input type="button" class="primaryBtn" value="Next Step">
       </div>
     </div>
     <!-- Step 2 end -->
@@ -116,7 +111,7 @@
       <!-- Submission -->
       <div>
         <input type="button" class="secondaryBtn" value="Go Back">
-        <input type="submit" class="primaryBtn" value="Next Step">
+        <input type="button" class="primaryBtn" value="Next Step">
       </div>
 
     </div>
@@ -153,7 +148,7 @@
       <!-- Confirmation -->
       <div>
         <input type="button" class="secondaryBtn" value="Go Back">
-        <input type="submit" class="primaryBtn" value="Confirm">
+        <input type="button" class="primaryBtn" value="Confirm">
       </div>
     </div>
     <!-- Step 4 end -->
@@ -189,5 +184,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="script.js" async defer></script>
 </body>
 </html>

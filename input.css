@@ -22,12 +22,16 @@ p{
     @apply font-light text-coolGray
 }
 
+h4 {
+    @apply text-base font-bold
+}
+
 .main{
     @apply h-screen flex items-center justify-center bg-magnolia font-sans
 }
 
 .card{
-    @apply bg-white p-7 rounded-xl max-w-5xl
+    @apply bg-white p-7 rounded-xl max-w-5xl flex
 }
 
 .tab{
@@ -37,6 +41,23 @@ p{
 .subHeading{
     @apply mb-10
 }
+
+#sideBar h4{
+    @apply text-white
+}
+
+#sideBar p{
+    @apply font-light
+}
+
+.circle { 
+    width: 33px; 
+    line-height: 33px; 
+    border-radius: 50%; 
+    text-align: center; 
+    border: 1px solid white;
+    color: white; 
+} 
 
 .btn{
     @apply font-normal px-4 py-2 text-center whitespace-nowrap cursor-pointer rounded-md

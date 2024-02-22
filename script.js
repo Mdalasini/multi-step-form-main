@@ -2,7 +2,7 @@ const primaryButtons = document.querySelectorAll('button[type="button"].btn-prim
 const secondaryButtons = document.querySelectorAll('button[type="button"].btn-secondary')
 const tabElements = document.getElementsByClassName('tab')
 
-let currentTab = 0
+let currentTab = 1
 showTab(currentTab)
 
 

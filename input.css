@@ -2,18 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
+/* GENERAL */
 h2{
     @apply text-3xl text-marineBlue font-bold mb-2
 }
@@ -26,15 +15,17 @@ h4 {
     @apply text-base font-bold
 }
 
+h5{
+    @apply font-normal text-marineBlue
+}
+
 .main{
     @apply h-screen flex items-center justify-center bg-magnolia font-sans
 }
 
 .card{
-    @apply bg-white p-7 rounded-xl max-w-5xl flex
+    @apply bg-white p-7 rounded-xl max-w-6xl flex
 }
-
-
 
 
 .tab{
@@ -45,6 +36,15 @@ h4 {
     @apply mb-10
 }
 
+.btn{
+    @apply font-normal px-4 py-2 text-center whitespace-nowrap cursor-pointer rounded-md
+}
+
+.btn-primary{
+    @apply bg-marineBlue text-white hover:bg-purplishBlue transition-all
+}
+
+/* SIDEBAR */
 #sideBar h4{
     @apply text-white
 }
@@ -62,12 +62,17 @@ h4 {
     color: white; 
 } 
 
-.btn{
-    @apply font-normal px-4 py-2 text-center whitespace-nowrap cursor-pointer rounded-md
+/* YOUR INFO */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.btn-primary{
-    @apply bg-marineBlue text-white hover:bg-purplishBlue transition-all
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 #info input{
@@ -77,6 +82,14 @@ h4 {
 #info input.invalid {
     @apply border-strawberryRed
 }
+
+/* SELECT PLAN */
+#options {
+    @apply flex gap-x-6
+}
+
+
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

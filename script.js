@@ -64,3 +64,43 @@ secondaryButtons.forEach(secondaryBtn => {
         nextTab(-1);
     });
 });
+
+const monthlyPrices = document.querySelectorAll('.monthlyPrice')
+const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
+const toggle = document.getElementById('toggle')
+
+// Initial check for the toggle state on page load
+if (toggle.checked) {
+    showYearlyPrices();
+} else {
+    showMonthlyPrices();
+}
+  
+// Add event listener to the toggle for TODO 7, 8, 9
+toggle.addEventListener('change', function() {
+    if (toggle.checked) {
+        showYearlyPrices(); // TODO 8
+    } else {
+    showMonthlyPrices(); // TODO 9
+    }
+});
+  
+// Function to show yearly prices and hide monthly prices
+function showYearlyPrices() {
+    yearlyPrices.forEach(price => {
+        price.style.display = 'block'; // TODO 8
+    });
+    monthlyPrices.forEach(price => {
+        price.style.display = 'none'; // TODO 9
+    });
+}
+
+// Function to show monthly prices and hide yearly prices
+function showMonthlyPrices() {
+    yearlyPrices.forEach(price => {
+        price.style.display = 'none'; // TODO 9
+    });
+    monthlyPrices.forEach(price => {
+        price.style.display = 'block'; // TODO 8
+    });
+}

@@ -69,9 +69,6 @@
               <input type="number" id="number" placeholder="e.g. +1 234 567 890" required onfocus="this.classList.remove('invalid')">
             </div>
           </div>
-          <div class="flex justify-end">
-            <button type="button" class="btn btn-primary">Next Step</button>
-          </div>
         </div>
         <!-- Step 1 end -->
         <!-- Step 2 start -->
@@ -134,11 +131,6 @@
               <span class="font-normal text-coolGray peer-checked:text-marineBlue transition-all">Yearly</span>
             </label>
           </div>
-          <!-- Submission -->
-          <div>
-            <button type="button" class="btn btn-secondary">Go Back</button>
-            <button type="button" class="btn btn-primary">Next Step</button>
-          </div>
         </div>
         <!-- Step 2 end -->
         <!-- Step 3 start -->
@@ -174,11 +166,6 @@
             <label for="storage"></label>
             <label for="profile"></label>
           </div>
-          <!-- Submission -->
-          <div>
-            <button type="button" class="btn btn-secondary">Go Back</button>
-            <button type="button" class="btn btn-primary">Next Step</button>
-          </div>
         </div>
         <!-- Step 3 end -->
         <!-- Step 4 start -->
@@ -204,11 +191,6 @@
             <p>Total (per month/year)</p>
             <p id="totalPrice"></p>
           </div>
-          <!-- Confirmation -->
-          <div>
-            <button type="button" class="btn btn-secondary">Go Back</button>
-            <button type="submit" class="btn btn-primary">Confirm</button>
-          </div>
         </div>
         <!-- Step 4 end -->
         <!-- Step 5 start -->
@@ -220,6 +202,11 @@
             to email us at support@loremgaming.com.</p>
         </div>
         <!-- Step 5 end -->
+        <!-- Submission -->
+        <div class="flex items-center justify-between bottom-0 w-full">
+          <button type="button" class="btn btn-secondary">Go Back</button>
+          <button type="button" class="btn btn-primary ml-auto"></button>
+        </div>
     
       </form>
     </div>

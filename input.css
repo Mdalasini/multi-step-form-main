@@ -27,9 +27,13 @@ h5{
     @apply bg-white p-7 rounded-xl max-w-6xl flex
 }
 
+#setupForm{
+    @apply pl-28 pt-10 pr-24 flex flex-col justify-between
+}
+
 
 .tab{
-    @apply hidden ml-28 mt-10 mr-24 h-full
+    @apply hidden
 }
 
 .subHeading{
@@ -43,6 +47,11 @@ h5{
 .btn-primary{
     @apply bg-marineBlue text-white hover:bg-purplishBlue transition-all
 }
+
+.btn-secondary{
+    @apply text-coolGray
+}
+
 
 /* SIDEBAR */
 #sideBar h4{

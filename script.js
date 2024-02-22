@@ -1,14 +1,48 @@
 const primaryButtons = document.querySelectorAll('button[type="button"].btn-primary')
 const secondaryButtons = document.querySelectorAll('button[type="button"].btn-secondary')
 const tabElements = document.getElementsByClassName('tab')
+const monthlyPrices = document.querySelectorAll('.monthlyPrice')
+const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
+const toggle = document.getElementById('toggle')
 
 let currentTab = 1
 showTab(currentTab)
 
 
-function showTab(n) {
+function showTab(n) { 
+    // Show the current tab
     tabElements[n].style.display = 'block';
-}
+  
+    // Get buttons with the class primaryBtn and secondaryBtn
+    const primaryBtn = document.querySelector('.btn-primary');
+    const secondaryBtn = document.querySelector('.btn-secondary');
+  
+    // Hide both buttons by default
+    primaryBtn.style.display = 'none';
+    secondaryBtn.style.display = 'none';
+  
+    if (n === 0) {
+      // If n is 0, display the primaryBtn with its text as 'Next Step'
+      primaryBtn.style.display = 'block';
+      primaryBtn.innerText = 'Next Step';
+    } else if (n >= 1 && n <= 3) {
+      // If n is [1, 2, 3], display both buttons with the primaryBtn's text as 'Next Step'
+      primaryBtn.style.display = 'block';
+      secondaryBtn.style.display = 'block';
+      primaryBtn.innerText = 'Next Step';
+    }
+  
+    if (n === 3) {
+      // If n is 3, set the primaryBtn's type to `submit` and text to 'Confirm'
+      primaryBtn.type = 'submit';
+      primaryBtn.innerText = 'Confirm';
+    } else if (n === 4) {
+      // If n is 4, don't display either button
+      primaryBtn.style.display = 'none';
+      secondaryBtn.style.display = 'none';
+    }
+  }
+  
 
 function nextTab(n){
     if (currentTab === 0 && !validateTab1()){ // don't switch tabs is tab1 is invalid
@@ -65,9 +99,6 @@ secondaryButtons.forEach(secondaryBtn => {
     });
 });
 
-const monthlyPrices = document.querySelectorAll('.monthlyPrice')
-const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
-const toggle = document.getElementById('toggle')
 
 // Initial check for the toggle state on page load
 if (toggle.checked) {
@@ -104,3 +135,4 @@ function showMonthlyPrices() {
         price.style.display = 'block'; // TODO 8
     });
 }
+

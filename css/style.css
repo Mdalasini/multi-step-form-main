@@ -500,8 +500,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 2.5rem;
 }
 
-.mt-9 {
-  margin-top: 2.25rem;
+.bottom-0 {
+  bottom: 0px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -516,44 +524,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-80 {
-  height: 20rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-60 {
-  height: 15rem;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-52 {
-  height: 13rem;
-}
-
 .h-64 {
   height: 16rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .w-\[160px\] {
   width: 160px;
 }
 
-.w-12 {
-  width: 3rem;
-}
-
 .w-11 {
   width: 2.75rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .cursor-pointer {
@@ -584,6 +572,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .gap-y-4 {
   row-gap: 1rem;
 }
@@ -609,12 +601,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: calc(4rem * var(--tw-space-y-reverse));
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -625,6 +611,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-md {
@@ -647,11 +639,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-marineBlue {
   --tw-bg-opacity: 1;
   background-color: hsl(213 96% 18% / var(--tw-bg-opacity));
-}
-
-.bg-magnolia {
-  --tw-bg-opacity: 1;
-  background-color: hsl(217 100% 97% / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\.\.\/assets\/images\/bg-sideBar-desktop\.svg\)\] {
@@ -687,10 +674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-normal {
   font-weight: 500;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .uppercase {
@@ -761,12 +744,17 @@ h5 {
   padding: 1.75rem;
 }
 
+#setupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 7rem;
+  padding-top: 2.5rem;
+  padding-right: 6rem;
+}
+
 .tab {
-  margin-left: 7rem;
-  margin-top: 2.5rem;
-  margin-right: 6rem;
   display: none;
-  height: 100%;
 }
 
 .subHeading {
@@ -798,6 +786,11 @@ h5 {
 .btn-primary:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(243 100% 62% / var(--tw-bg-opacity));
+}
+
+.btn-secondary {
+  --tw-text-opacity: 1;
+  color: hsl(231 11% 63% / var(--tw-text-opacity));
 }
 
 /* SIDEBAR */
@@ -877,24 +870,9 @@ input[type=number] {
   position: absolute;
 }
 
-.after\:top-\[2px\]::after {
-  content: var(--tw-content);
-  top: 2px;
-}
-
 .after\:top-\[4px\]::after {
   content: var(--tw-content);
   top: 4px;
-}
-
-.after\:left-0::after {
-  content: var(--tw-content);
-  left: 0px;
-}
-
-.after\:left-\[2px\]::after {
-  content: var(--tw-content);
-  left: 2px;
 }
 
 .after\:left-\[4px\]::after {
@@ -902,24 +880,9 @@ input[type=number] {
   left: 4px;
 }
 
-.after\:left-\[3px\]::after {
-  content: var(--tw-content);
-  left: 3px;
-}
-
-.after\:h-5::after {
-  content: var(--tw-content);
-  height: 1.25rem;
-}
-
 .after\:h-4::after {
   content: var(--tw-content);
   height: 1rem;
-}
-
-.after\:w-5::after {
-  content: var(--tw-content);
-  width: 1.25rem;
 }
 
 .after\:w-4::after {
@@ -935,12 +898,6 @@ input[type=number] {
 .after\:border::after {
   content: var(--tw-content);
   border-width: 1px;
-}
-
-.after\:border-gray-300::after {
-  content: var(--tw-content);
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .after\:border-white::after {
@@ -987,18 +944,6 @@ input[type=number] {
   color: hsl(213 96% 18% / var(--tw-text-opacity));
 }
 
-.peer:checked ~ .peer-checked\:after\:translate-x-full::after {
-  content: var(--tw-content);
-  --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.peer:checked ~ .peer-checked\:after\:translate-x-6::after {
-  content: var(--tw-content);
-  --tw-translate-x: 1.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .peer:checked ~ .peer-checked\:after\:translate-x-5::after {
   content: var(--tw-content);
   --tw-translate-x: 1.25rem;
@@ -1009,18 +954,6 @@ input[type=number] {
   content: var(--tw-content);
   --tw-border-opacity: 1;
   border-color: hsl(0 0% 100% / var(--tw-border-opacity));
-}
-
-[dir="rtl"] .peer:checked ~ .rtl\:peer-checked\:after\:-translate-x-full::after {
-  content: var(--tw-content);
-  --tw-translate-x: -100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-[dir="rtl"] .peer:checked ~ .rtl\:peer-checked\:after\:-translate-x-6::after {
-  content: var(--tw-content);
-  --tw-translate-x: -1.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 [dir="rtl"] .peer:checked ~ .rtl\:peer-checked\:after\:-translate-x-5::after {

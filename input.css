@@ -2,8 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+h2{
+    @apply text-3xl text-marineBlue font-bold mb-2
+}
+
+p{
+    @apply font-light text-coolGray
+}
+
+.main{
+    @apply h-screen flex items-center justify-center bg-magnolia font-sans
+}
+
+.card{
+    @apply bg-white p-7 rounded-xl max-w-5xl
+}
+
 .tab{
-    display: none;
+    @apply hidden w-[450px]
+}
+
+.subHeading{
+    @apply mb-10
+}
+
+.btn{
+    @apply font-normal px-4 py-2 text-center whitespace-nowrap cursor-pointer rounded-md
+}
+
+.btn-primary{
+    @apply bg-marineBlue text-white hover:bg-purplishBlue transition-all
+}
+
+#info input{
+    @apply border p-3 rounded-md outline-none focus:outline-purplishBlue focus:outline-1 focus:outline-offset-0
+}
+
+#info input.invalid {
+    @apply border-strawberryRed
 }
 
 .attribution { font-size: 11px; text-align: center; }

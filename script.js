@@ -1,5 +1,5 @@
-const primaryButtons = document.querySelectorAll('input[type="button"].primaryBtn')
-const secondaryButtons = document.querySelectorAll('input[type="button"].secondaryBtn')
+const primaryButtons = document.querySelectorAll('button[type="button"].btn-primary')
+const secondaryButtons = document.querySelectorAll('button[type="button"].btn-secondary')
 const tabElements = document.getElementsByClassName('tab')
 
 let currentTab = 0

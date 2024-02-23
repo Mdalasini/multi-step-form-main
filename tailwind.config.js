@@ -2,17 +2,17 @@ module.exports = {
   content: ["./*.html"],
   theme: {
     screens: {
-      'sm': '430px',
-      // => @media (min-width: 430px) { ... }
+      'sm': {'max': '429px'},
+      // => @media (max-width: 429px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
+      'md': {'max': '767px'},
+      // => @media (max-width: 767px) { ... }
 
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
 
-      'xl': '1440px',
-      // => @media (min-width: 1440px) { ... }
+      'xl': {'max': '1439px'},
+      // => @media (max-width: 1439px) { ... }
     },
     extend: {
       colors: {

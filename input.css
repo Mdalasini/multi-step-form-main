@@ -28,7 +28,7 @@ h5{
 }
 
 #setupForm{
-    @apply pl-28 pt-10 pr-24 flex flex-col justify-between
+    @apply pl-28 pr-24 flex flex-col justify-between max-w-3xl
 }
 
 

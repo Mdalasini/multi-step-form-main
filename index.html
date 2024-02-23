@@ -52,7 +52,7 @@
        <!-- Sidebar end --> 
       <form action="" id="setupForm">
         <!-- Step 1 start -->
-        <div id="info" class="tab">
+        <div id="info" class="tab pt-10">
           <h2>Personal info</h2>
           <p class="subHeading">Please provide your name, email address, and phone number.</p>
           <div class="space-y-4">
@@ -72,7 +72,7 @@
         </div>
         <!-- Step 1 end -->
         <!-- Step 2 start -->
-        <div id="plan" class="tab">
+        <div id="plan" class="tab pt-10">
           <h2>Select your plan</h2>
           <p class="subHeading">You have the option of monthly or yearly billing.</p>
           <!-- Options -->
@@ -134,7 +134,7 @@
         </div>
         <!-- Step 2 end -->
         <!-- Step 3 start -->
-        <div id="addons" class="tab">
+        <div id="addons" class="tab pt-10">
           <h2>Pick add-ons</h2>
           <p class="subHeading">Add-ons help enhance your gaming experience.</p>
           <!-- Add-Ons -->
@@ -146,7 +146,7 @@
                 <p>Access to multiplayer games</p>
               </div>
               <p class="addonPrice monthlyPrice">+$1/mo</p>
-              <p class="addonPrice yearlyPrice hidden">+$10/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$10/yr</p>
             </label>
             <label for="storage" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
               <input type="checkbox" name="selectedAddon" id="storage" value="Larger storage" class="accent-purplishBlue">
@@ -155,7 +155,7 @@
                 <p>Extra 1TB of cloud save</p>
               </div>
               <p class="addonPrice monthlyPrice">+$2/mo</p>
-              <p class="addonPrice yearlyPrice hidden">+$20/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$20/yr</p>
             </label>
             <label for="profile" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
               <input type="checkbox" name="selectedAddon" id="profile" value="Customizable Profile" class="accent-purplishBlue">
@@ -164,47 +164,47 @@
                 <p>Custom theme on your profile</p>
               </div>
               <p class="addonPrice monthlyPrice">+$2/mo</p>
-              <p class="addonPrice yearlyPrice hidden">+$20/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$20/yr</p>
             </label>
           </div>
         </div>
         <!-- Step 3 end -->
         <!-- Step 4 start -->
-        <div id="finishingUp" class="tab">
+        <div id="finishingUp" class="tab pt-10">
           <h2>Finishing up</h2>
           <p class="subHeading">Double-check everything looks OK before confirming.</p>
-          <div>
+          <div class="bg-alabaster p-5 rounded-lg">
             <!-- Dynamically add subscription and add-on selections here -->
             <!-- Show selected plan -->
             <div class="flex justify-between">
               <div class="flex flex-col items-start">
                 <h5 id="selectedPlan"></h5>
-                <button class="btn btn-secondary underline">Change</button>
+                <button type="button" class="text-coolGray underline" onclick="nextTab(-2)">Change</button>
               </div>
               <p id="selectedPlanPrice"></p>
             </div>
-            <div class="line"></div>
+            <div class="line border my-5"></div>
             <!-- Show selected Add-Ons -->
-            <div id="selectedAddons"></div>
+            <div id="selectedAddons" class="space-y-2"></div>
           </div>
           <!-- Calculate total -->
-          <div class="flex justify-between">
+          <div class="flex justify-between px-5 mt-7">
             <p>Total <span id="totalDuration"></span></p>
-            <p id="totalPrice"></p>
+            <p id="totalPrice" class="text-purplishBlue text-lg font-bold"></p>
           </div>
         </div>
         <!-- Step 4 end -->
         <!-- Step 5 start -->
-        <div id="thankYou" class="tab">
-          <img src="/assets/images/icon-thank-you.svg" alt="">
-          <h2>Thank you!</h2>
+        <div id="thankYou" class="tab text-center my-auto">
+          <img src="/assets/images/icon-thank-you.svg" alt="" class="mx-auto mb-6">
+          <h2 class="mb-3">Thank you!</h2>
           <p>Thanks for confirming your subscription! We hope you have fun
             using our platform. If you ever need support, please feel free
             to email us at support@loremgaming.com.</p>
         </div>
         <!-- Step 5 end -->
         <!-- Submission -->
-        <div class="flex items-center justify-between bottom-0 w-full">
+        <div class="flex items-center justify-between bottom-0">
           <button type="button" class="btn btn-secondary">Go Back</button>
           <button type="button" class="btn btn-primary ml-auto"></button>
         </div>

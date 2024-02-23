@@ -1,17 +1,17 @@
-const primaryButtons = document.querySelectorAll('button[type="button"].btn-primary')
-const secondaryButtons = document.querySelectorAll('button[type="button"].btn-secondary')
+const primaryBtn = document.querySelector('.btn-primary');
+const secondaryBtn = document.querySelector('.btn-secondary');
 const tabElements = document.getElementsByClassName('tab')
 const monthlyPrices = document.querySelectorAll('.monthlyPrice')
 const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
 const toggle = document.getElementById('toggle')
 
-let currentTab = 2
+let currentTab = 0
 showTab(currentTab)
 
 
 function showTab(n) {
     if (n === 3){
-        performSetup()
+        performSetup();
     }
   
     // Show the current tab
@@ -21,11 +21,7 @@ function showTab(n) {
     handleButtons(n);
 }
   
-function handleButtons(tabIndex) {
-    // Get buttons with the class primaryBtn and secondaryBtn
-    const primaryBtn = document.querySelector('.btn-primary');
-    const secondaryBtn = document.querySelector('.btn-secondary');
-  
+function handleButtons(tabIndex) {  
     // Hide both buttons by default
     primaryBtn.style.display = 'none';
     secondaryBtn.style.display = 'none';
@@ -61,9 +57,6 @@ function nextTab(n){
     // Hide current tab
     tabElements[currentTab].style.display = 'none'
     currentTab += n // change currentTab
-    if (currentTab >= tabElements.length -1){ // at the end of the form
-        document.getElementById('setupForm').onsubmit()
-    }
     // display desired tab
     showTab(currentTab)
 }
@@ -74,39 +67,35 @@ function nextTab(n){
  * @returns {boolean} valid - Whether the inputs are valid or not
  */
 function validateTab1() {
-    // TODO1: Get the first element with the class 'tab'
+    // Get the first element with the class 'tab'
     const tabElement = document.querySelector('.tab');
 
-    // TODO2: Get the input elements
+    // Get the input elements
     const inputElements = tabElement.querySelectorAll('input');
 
-    // TODO3: Check their validity
+    // Check their validity
     let valid = true;
     inputElements.forEach(input => {
         if (!input.checkValidity()) {
-            // TODO4: For those that are not valid add the class 'invalid' to them
+            // For those that are not valid add the class 'invalid' to them
             input.classList.add('invalid');
             valid = false;
         }
     });
 
-    // TODO5: Return valid as a boolean - True if all inputs are valid, False otherwise
+    // Return valid as a boolean - True if all inputs are valid, False otherwise
     return valid;
 }
 
 
-// TODO 6: Add a click event listener to the 'primaryBtn's to run the function nextTab(1)
-primaryButtons.forEach(primaryBtn => {
-    primaryBtn.addEventListener('click', function () {
+// Add a click event listener to the primaryBtn to run the function nextTab(1)
+primaryBtn.addEventListener('click', function () {
         nextTab(1);
-    });
 });
 
-// TODO 7: Add a click event listener to the 'secondaryBtn's to run the function nextTab(-1)
-secondaryButtons.forEach(secondaryBtn => {
-    secondaryBtn.addEventListener('click', function () {
+// Add a click event listener to the secondaryBtn to run the function nextTab(1)
+secondaryBtn.addEventListener('click', function () {
         nextTab(-1);
-    });
 });
 
 
@@ -244,7 +233,7 @@ function updateSelectedAddons(selectedAddonValues, duration) {
         const adjustedAddonPrice = duration === 'Yearly' ? addonPrice * 10 : addonPrice;
         return `<div class="flex items-center justify-between">
                     <p class="text-light">${addon}</p>
-                    <p class="text-marineBlue">${duration === 'Monthly' ? `+ $${adjustedAddonPrice}/mo` : `+ $${adjustedAddonPrice}/yr`}</p>
+                    <p class="text-marineBlue text-sm">${duration === 'Monthly' ? `+ $${adjustedAddonPrice}/mo` : `+ $${adjustedAddonPrice}/yr`}</p>
                 </div>`;
     }).join('');
 
@@ -259,10 +248,10 @@ function updateTotalDuration(duration) {
 }
 
 // Function to update total price
-function updateTotalPrice(adjustedPlanPrice, selectedAddonValues) {
+function updateTotalPrice(adjustedPlanPrice, selectedAddonValues, duration) {
     const totalPrice = document.getElementById('totalPrice');
     const total = adjustedPlanPrice + selectedAddonValues.reduce((acc, addon) => acc + addonPrices[addon], 0);
-    totalPrice.innerText = `$${total}`;
+    totalPrice.innerText = `${duration === 'Monthly' ? `$${total}/mo` : `$${total}/yr`}`;
 }
 
 // Main function to perform the setup
@@ -282,7 +271,7 @@ function performSetup() {
     updateTotalDuration(duration);
 
     const adjustedPlanPrice = duration === 'Yearly' ? planPrices[selectedPlan.value] * 10 : planPrices[selectedPlan.value];
-    updateTotalPrice(adjustedPlanPrice, selectedAddonValues);
+    updateTotalPrice(adjustedPlanPrice, selectedAddonValues, duration);
 }
 
 

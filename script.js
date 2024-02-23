@@ -5,7 +5,7 @@ const monthlyPrices = document.querySelectorAll('.monthlyPrice')
 const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
 const toggle = document.getElementById('toggle')
 
-let currentTab = 0
+let currentTab = 1
 showTab(currentTab)
 
 function highlightCircle(n) {

@@ -571,6 +571,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 440px;
 }
 
+.w-\[360px\] {
+  width: 360px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[280px\] {
+  width: 280px;
+}
+
+.w-\[2px\] {
+  width: 2px;
+}
+
+.w-\[20px\] {
+  width: 20px;
+}
+
+.w-\[1600px\] {
+  width: 1600px;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -1125,16 +1149,52 @@ input[type=number] {
     right: 1.25rem;
   }
 
+  .lg\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .lg\:block {
     display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:hidden {
     display: none;
   }
 
+  .lg\:h-80 {
+    height: 20rem;
+  }
+
+  .lg\:h-8 {
+    height: 2rem;
+  }
+
+  .lg\:h-9 {
+    height: 2.25rem;
+  }
+
+  .lg\:h-96 {
+    height: 24rem;
+  }
+
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[280\] {
+    width: 280;
+  }
+
+  .lg\:w-\[280px\] {
+    width: 280px;
   }
 
   .lg\:max-w-fit {
@@ -1147,8 +1207,40 @@ input[type=number] {
     flex-direction: row;
   }
 
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
+  .lg\:items-start {
+    align-items: flex-start;
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+
   .lg\:gap-y-1 {
     row-gap: 0.25rem;
+  }
+
+  .lg\:gap-y-2 {
+    row-gap: 0.5rem;
+  }
+
+  .lg\:gap-y-3 {
+    row-gap: 0.75rem;
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .lg\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .lg\:bg-white {

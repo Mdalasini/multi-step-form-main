@@ -690,6 +690,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-repeat: no-repeat;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -734,6 +738,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-coolGray {
   --tw-text-opacity: 1;
   color: hsl(231 11% 63% / var(--tw-text-opacity));
+}
+
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .accent-purplishBlue {

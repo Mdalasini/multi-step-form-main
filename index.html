@@ -125,7 +125,7 @@
           <!-- Toggle -->
           <div class="flex justify-center bg-alabaster py-4">
             <label class="inline-flex items-center cursor-pointer space-x-3" for="toggle">
-              <input type="checkbox" value="Yearly" name="toggle" id="toggle" class="sr-only peer">
+              <input type="checkbox" value="Yearly" name="selectedDuration" id="toggle" class="sr-only peer">
               <span class="font-normal text-marineBlue peer-checked:text-coolGray transition-all">Monthly</span>
               <div class="relative w-11 h-6 bg-marineBlue rounded-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] peer-checked:after:translate-x-5 rtl:peer-checked:after:-translate-x-5  after:bg-white after:border-white after:border after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
               <span class="font-normal text-coolGray peer-checked:text-marineBlue transition-all">Yearly</span>
@@ -140,7 +140,7 @@
           <!-- Add-Ons -->
           <div class="space-y-5">
             <label for="services" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
-              <input type="checkbox" name="services" id="services" value="Online services" checked class="accent-purplishBlue">
+              <input type="checkbox" name="selectedAddon" id="services" value="Online services" checked class="accent-purplishBlue">
               <div class="flex-grow">
                 <h5>Online service</h5>
                 <p>Access to multiplayer games</p>
@@ -149,7 +149,7 @@
               <p class="addonPrice yearlyPrice hidden">+$10/mo</p>
             </label>
             <label for="storage" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
-              <input type="checkbox" name="storage" id="storage" value="Larger storage" class="accent-purplishBlue">
+              <input type="checkbox" name="selectedAddon" id="storage" value="Larger storage" class="accent-purplishBlue">
               <div class="flex-grow">
                 <h5>Larger storage</h5>
                 <p>Extra 1TB of cloud save</p>
@@ -158,7 +158,7 @@
               <p class="addonPrice yearlyPrice hidden">+$20/mo</p>
             </label>
             <label for="profile" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
-              <input type="checkbox" name="profile" id="profile" value="Customizable Profile" class="accent-purplishBlue">
+              <input type="checkbox" name="selectedAddon" id="profile" value="Customizable Profile" class="accent-purplishBlue">
               <div class="flex-grow">
                 <h5>Customizable Profile</h5>
                 <p>Custom theme on your profile</p>
@@ -171,15 +171,15 @@
         <!-- Step 3 end -->
         <!-- Step 4 start -->
         <div id="finishingUp" class="tab">
-          <h2>Pick add-ons</h2>
-          <p class="subHeading">Add-ons help enhance your gaming experience.</p>
+          <h2>Finishing up</h2>
+          <p class="subHeading">Double-check everything looks OK before confirming.</p>
           <div>
             <!-- Dynamically add subscription and add-on selections here -->
             <!-- Show selected plan -->
-            <div>
-              <div>
+            <div class="flex justify-between">
+              <div class="flex flex-col items-start">
                 <h5 id="selectedPlan"></h5>
-                <button>Change</button>
+                <button class="btn btn-secondary underline">Change</button>
               </div>
               <p id="selectedPlanPrice"></p>
             </div>
@@ -188,8 +188,8 @@
             <div id="selectedAddons"></div>
           </div>
           <!-- Calculate total -->
-          <div>
-            <p>Total (per month/year)</p>
+          <div class="flex justify-between">
+            <p>Total <span id="totalDuration"></span></p>
             <p id="totalPrice"></p>
           </div>
         </div>

@@ -10,7 +10,9 @@ showTab(currentTab)
 
 
 function showTab(n) {
-    // Assuming tabElements is an array of DOM elements representing your tabs
+    if (n === 3){
+        performSetup()
+    }
   
     // Show the current tab
     tabElements[n].style.display = 'block';
@@ -41,7 +43,7 @@ function handleButtons(tabIndex) {
   
     if (tabIndex === 3) {
       // If tabIndex is 3, set the primaryBtn's type to `submit` and text to 'Confirm'
-      primaryBtn.type = 'submit';
+    //   primaryBtn.type = 'submit';
       primaryBtn.innerText = 'Confirm';
     } else if (tabIndex === 4) {
       // If tabIndex is 4, don't display either button
@@ -118,19 +120,19 @@ if (toggle.checked) {
 // Add event listener to the toggle for TODO 7, 8, 9
 toggle.addEventListener('change', function() {
     if (toggle.checked) {
-        showYearlyPrices(); // TODO 8
+        showYearlyPrices(); 
     } else {
-    showMonthlyPrices(); // TODO 9
+    showMonthlyPrices(); 
     }
 });
   
 // Function to show yearly prices and hide monthly prices
 function showYearlyPrices() {
     yearlyPrices.forEach(price => {
-        price.style.display = 'block'; // TODO 8
+        price.style.display = 'block'; 
     });
     monthlyPrices.forEach(price => {
-        price.style.display = 'none'; // TODO 9
+        price.style.display = 'none'; 
     });
 }
 
@@ -145,17 +147,17 @@ function showMonthlyPrices() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // TODO 10: Select every input tag under the div with the id of 'addons'
+    // Select every input tag under the div with the id of 'addons'
     const addonInputs = document.querySelectorAll('#addons input[type="checkbox"]');
   
-    // TODO 11: Check to see if the input is checked on page load
+    // Check to see if the input is checked on page load
     addonInputs.forEach(input => {
       if (input.checked) {
         addBorderClass(input);
       }
     });
   
-    // TODO 12: Add an event listener to every one of those inputs
+    // Add an event listener to every one of those inputs
     addonInputs.forEach(input => {
       input.addEventListener('change', function() {
         if (input.checked) {
@@ -183,4 +185,105 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
   
+const planPrices = {
+    'Arcade': 9,
+    'Advanced': 12,
+    'Pro': 15,
+};
+
+const addonPrices = {
+    'Online services': 1,
+    'Larger storage': 2,
+    'Customizable Profile': 2,
+};
+
+// Function to initialize the setup form
+function initializeSetupForm() {
+    return document.getElementById('setupForm');
+}
+
+// Function to get selected elements from the setup form
+function getSelectedElements(form) {
+    return {
+        selectedPlan: form.elements['selectedPlan'],
+        selectedDuration: form.elements['selectedDuration'],
+        selectedAddon: form.elements['selectedAddon'],
+    };
+}
+
+// Function to calculate duration
+function calculateDuration(selectedDuration) {
+    return selectedDuration.checked ? selectedDuration.value : 'Monthly';
+}
+
+// Function to update the selected plan information
+function updateSelectedPlanInfo(selectedPlan, duration) {
+    const plan = document.getElementById('selectedPlan');
+    plan.innerText = selectedPlan.value ? `${selectedPlan.value} (${duration})` : '';
+}
+
+// Function to update the selected plan price
+function updateSelectedPlanPrice(selectedPlan, duration) {
+    const planPrice = document.getElementById('selectedPlanPrice');
+    const selectedPlanPrice = planPrices[selectedPlan.value];
+    const adjustedPlanPrice = duration === 'Yearly' ? selectedPlanPrice * 10 : selectedPlanPrice;
+    planPrice.innerText = duration === 'Monthly' ? `$${adjustedPlanPrice}/mo` : `$${adjustedPlanPrice}/yr`;
+}
+
+// Function to get selected addon values
+function getSelectedAddonValues(selectedAddon) {
+    return Array.from(selectedAddon)
+        .filter(addon => addon.checked)
+        .map(addon => addon.value);
+}
+
+// Function to update selected addons
+function updateSelectedAddons(selectedAddonValues, duration) {
+    const addonElements = selectedAddonValues.map(addon => {
+        const addonPrice = addonPrices[addon];
+        const adjustedAddonPrice = duration === 'Yearly' ? addonPrice * 10 : addonPrice;
+        return `<div class="flex items-center justify-between">
+                    <p class="text-light">${addon}</p>
+                    <p class="text-marineBlue">${duration === 'Monthly' ? `+ $${adjustedAddonPrice}/mo` : `+ $${adjustedAddonPrice}/yr`}</p>
+                </div>`;
+    }).join('');
+
+    const addons = document.getElementById('selectedAddons');
+    addons.innerHTML = addonElements;
+}
+
+// Function to update total duration
+function updateTotalDuration(duration) {
+    const totalDuration = document.getElementById('totalDuration');
+    totalDuration.innerText = duration === 'Yearly' ? '(per year)' : '(per month)';
+}
+
+// Function to update total price
+function updateTotalPrice(adjustedPlanPrice, selectedAddonValues) {
+    const totalPrice = document.getElementById('totalPrice');
+    const total = adjustedPlanPrice + selectedAddonValues.reduce((acc, addon) => acc + addonPrices[addon], 0);
+    totalPrice.innerText = `$${total}`;
+}
+
+// Main function to perform the setup
+function performSetup() {
+    const form = initializeSetupForm();
+    const selectedElements = getSelectedElements(form);
+    const { selectedPlan, selectedDuration, selectedAddon } = selectedElements;
+
+    const duration = calculateDuration(selectedDuration);
+
+    updateSelectedPlanInfo(selectedPlan, duration);
+    updateSelectedPlanPrice(selectedPlan, duration);
+
+    const selectedAddonValues = getSelectedAddonValues(selectedAddon);
+    updateSelectedAddons(selectedAddonValues, duration);
+
+    updateTotalDuration(duration);
+
+    const adjustedPlanPrice = duration === 'Yearly' ? planPrices[selectedPlan.value] * 10 : planPrices[selectedPlan.value];
+    updateTotalPrice(adjustedPlanPrice, selectedAddonValues);
+}
+
+
 

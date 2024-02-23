@@ -5,14 +5,21 @@ const monthlyPrices = document.querySelectorAll('.monthlyPrice')
 const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
 const toggle = document.getElementById('toggle')
 
-let currentTab = 1
+let currentTab = 2
 showTab(currentTab)
 
 
-function showTab(n) { 
+function showTab(n) {
+    // Assuming tabElements is an array of DOM elements representing your tabs
+  
     // Show the current tab
     tabElements[n].style.display = 'block';
   
+    // Call the function to handle buttons based on the tab index
+    handleButtons(n);
+}
+  
+function handleButtons(tabIndex) {
     // Get buttons with the class primaryBtn and secondaryBtn
     const primaryBtn = document.querySelector('.btn-primary');
     const secondaryBtn = document.querySelector('.btn-secondary');
@@ -21,27 +28,28 @@ function showTab(n) {
     primaryBtn.style.display = 'none';
     secondaryBtn.style.display = 'none';
   
-    if (n === 0) {
-      // If n is 0, display the primaryBtn with its text as 'Next Step'
+    if (tabIndex === 0) {
+      // If tabIndex is 0, display the primaryBtn with its text as 'Next Step'
       primaryBtn.style.display = 'block';
       primaryBtn.innerText = 'Next Step';
-    } else if (n >= 1 && n <= 3) {
-      // If n is [1, 2, 3], display both buttons with the primaryBtn's text as 'Next Step'
+    } else if (tabIndex >= 1 && tabIndex <= 3) {
+      // If tabIndex is [1, 2, 3], display both buttons with the primaryBtn's text as 'Next Step'
       primaryBtn.style.display = 'block';
       secondaryBtn.style.display = 'block';
       primaryBtn.innerText = 'Next Step';
     }
   
-    if (n === 3) {
-      // If n is 3, set the primaryBtn's type to `submit` and text to 'Confirm'
+    if (tabIndex === 3) {
+      // If tabIndex is 3, set the primaryBtn's type to `submit` and text to 'Confirm'
       primaryBtn.type = 'submit';
       primaryBtn.innerText = 'Confirm';
-    } else if (n === 4) {
-      // If n is 4, don't display either button
+    } else if (tabIndex === 4) {
+      // If tabIndex is 4, don't display either button
       primaryBtn.style.display = 'none';
       secondaryBtn.style.display = 'none';
     }
-  }
+}
+  
   
 
 function nextTab(n){
@@ -135,4 +143,44 @@ function showMonthlyPrices() {
         price.style.display = 'block'; // TODO 8
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // TODO 10: Select every input tag under the div with the id of 'addons'
+    const addonInputs = document.querySelectorAll('#addons input[type="checkbox"]');
+  
+    // TODO 11: Check to see if the input is checked on page load
+    addonInputs.forEach(input => {
+      if (input.checked) {
+        addBorderClass(input);
+      }
+    });
+  
+    // TODO 12: Add an event listener to every one of those inputs
+    addonInputs.forEach(input => {
+      input.addEventListener('change', function() {
+        if (input.checked) {
+          addBorderClass(input);
+        } else {
+          removeBorderClass(input);
+        }
+      });
+    });
+  
+    function addBorderClass(input) {
+      // Add 'border-purplishBlue' to the input's associated label
+      const label = input.closest('label');
+      if (label) {
+        label.classList.add('border-purplishBlue');
+      }
+    }
+  
+    function removeBorderClass(input) {
+      // Remove 'border-purplishBlue' from the input's associated label
+      const label = input.closest('label');
+      if (label) {
+        label.classList.remove('border-purplishBlue');
+      }
+    }
+});
+  
 

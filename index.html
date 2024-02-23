@@ -138,33 +138,34 @@
           <h2>Pick add-ons</h2>
           <p class="subHeading">Add-ons help enhance your gaming experience.</p>
           <!-- Add-Ons -->
-          <div>
-            <label for="services">
-              <input type="checkbox" name="services" id="services" value="Online services">
-              <div>
+          <div class="space-y-5">
+            <label for="services" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
+              <input type="checkbox" name="services" id="services" value="Online services" checked class="accent-purplishBlue">
+              <div class="flex-grow">
                 <h5>Online service</h5>
                 <p>Access to multiplayer games</p>
               </div>
-              <p class="addonPrice">+$1/mo</p>
+              <p class="addonPrice monthlyPrice">+$1/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$10/mo</p>
             </label>
-            <label for="storage">
-              <input type="checkbox" name="storage" id="storage" value="Larger storage">
-              <div>
+            <label for="storage" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
+              <input type="checkbox" name="storage" id="storage" value="Larger storage" class="accent-purplishBlue">
+              <div class="flex-grow">
                 <h5>Larger storage</h5>
                 <p>Extra 1TB of cloud save</p>
               </div>
-              <p class="addonPrice">+$2/mo</p>
+              <p class="addonPrice monthlyPrice">+$2/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$20/mo</p>
             </label>
-            <label for="services">
-              <input type="checkbox" name="services" id="services" value="Customizable Profile">
-              <div>
+            <label for="profile" class="flex items-center gap-x-5 border border-lightGray py-4 px-5 rounded-lg w-[440px] transition-all">
+              <input type="checkbox" name="profile" id="profile" value="Customizable Profile" class="accent-purplishBlue">
+              <div class="flex-grow">
                 <h5>Customizable Profile</h5>
                 <p>Custom theme on your profile</p>
               </div>
-              <p class="addonPrice">+$2/mo</p>
+              <p class="addonPrice monthlyPrice">+$2/mo</p>
+              <p class="addonPrice yearlyPrice hidden">+$20/mo</p>
             </label>
-            <label for="storage"></label>
-            <label for="profile"></label>
           </div>
         </div>
         <!-- Step 3 end -->

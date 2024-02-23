@@ -97,6 +97,11 @@ input[type=number] {
     @apply flex gap-x-6
 }
 
+/* ADD-ONS */
+.addonPrice{
+    @apply text-purplishBlue
+}
+
 
 
 

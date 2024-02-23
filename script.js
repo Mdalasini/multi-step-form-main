@@ -8,6 +8,31 @@ const toggle = document.getElementById('toggle')
 let currentTab = 0
 showTab(currentTab)
 
+function highlightCircle(n) {
+    // Get all circles from the div with id 'sideBar'
+    const circles = document.getElementById('sideBar').getElementsByClassName('circle');
+
+    // Ensure n is a valid index (between 0 and circles.length - 1)
+    if (n < 0 || n >= circles.length) {
+        console.error('Invalid circle index.');
+        return;
+    }
+
+    // Treat n as 3 if it is 4
+    const adjustedIndex = n === 4 ? 3 : n;
+
+    // Loop through all circles and remove classes
+    for (let i = 0; i < circles.length; i++) {
+        const currentCircle = circles[i];
+
+        // Check if the current circle is the one to highlight
+        if (i === adjustedIndex) {
+            currentCircle.classList.add('bg-pastelBlue', 'border-pastelBlue', 'text-marineBlue');
+        } else {
+            currentCircle.classList.remove('bg-pastelBlue', 'border-pastelBlue', 'text-marineBlue');
+        }
+    }
+}
 
 function showTab(n) {
     if (n === 3){
@@ -16,6 +41,9 @@ function showTab(n) {
   
     // Show the current tab
     tabElements[n].style.display = 'block';
+
+    // Highlight associated step in sidebar
+    highlightCircle(n)
   
     // Call the function to handle buttons based on the tab index
     handleButtons(n);

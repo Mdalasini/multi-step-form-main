@@ -62,15 +62,6 @@ h5{
     @apply font-light
 }
 
-.circle { 
-    width: 33px; 
-    line-height: 33px; 
-    border-radius: 50%; 
-    text-align: center; 
-    border: 1px solid white;
-    color: white; 
-} 
-
 /* YOUR INFO */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

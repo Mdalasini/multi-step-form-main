@@ -766,6 +766,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-light {
   font-weight: 400;
 }
@@ -1197,6 +1202,12 @@ input[type=number] {
     width: 280px;
   }
 
+  .lg\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .lg\:max-w-fit {
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
@@ -1270,5 +1281,10 @@ input[type=number] {
   .lg\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }

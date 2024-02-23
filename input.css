@@ -20,24 +20,24 @@ h5{
 }
 
 .main{
-    @apply h-screen flex items-center justify-center bg-magnolia font-sans
+    @apply h-screen flex items-center justify-center bg-magnolia font-sans lg:items-start
 }
 
 .card{
-    @apply bg-white p-7 rounded-xl max-w-6xl flex
+    @apply bg-white p-7 rounded-xl max-w-6xl flex lg:flex-col lg:p-0 lg:relative lg:h-screen lg:bg-magnolia
 }
 
 #setupForm{
-    @apply pl-28 pr-24 flex flex-col justify-between max-w-3xl
+    @apply pl-28 pr-24 flex flex-col justify-between max-w-3xl lg:absolute lg:inset-0
 }
 
 
 .tab{
-    @apply hidden
+    @apply hidden lg:bg-white lg:rounded-lg lg:px-6 lg:absolute lg:top-24 lg:left-5 lg:w-[335px]
 }
 
 .subHeading{
-    @apply mb-10
+    @apply mb-10 lg:mb-5
 }
 
 .btn{

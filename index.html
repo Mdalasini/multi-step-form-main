@@ -15,13 +15,13 @@
   <section class="main">
     <div class="card">
       <!-- Sidebar start -->
-      <div id="sideBar" class="bg-[url(../assets/images/bg-sideBar-desktop.svg)] bg-no-repeat relative"> 
-          <div class="absolute uppercase left-8 top-10 flex flex-col gap-y-4">
+      <div id="sideBar" class="bg-[url(../assets/images/bg-sideBar-desktop.svg)] bg-no-repeat relative rounded-lg lg:bg-[url(../assets/images/bg-sideBar-mobile.svg)] lg:max-w-fit"> 
+          <div class="absolute uppercase left-8 top-10 flex flex-col gap-4 lg:flex-row lg:left-24">
             <div id="step1" class="flex items-center gap-x-4">
               <div class="circle w-8 h-8 rounded-full border border-white text-white flex items-center justify-center">
                 <span>1</span>
               </div>
-              <div class="sideBar-content">
+              <div class="sideBar-content lg:hidden">
                 <p>Step 1</p>
                 <h4>Your info</h4>
               </div>
@@ -30,7 +30,7 @@
               <div class="circle w-8 h-8 rounded-full border border-white text-white flex items-center justify-center">
                 <span>2</span>
               </div>
-              <div class="sideBar-content">
+              <div class="sideBar-content lg:hidden">
                 <p>Step 2</p>
                 <h4>Select plan</h4>
               </div>
@@ -39,7 +39,7 @@
               <div class="circle w-8 h-8 rounded-full border border-white text-white flex items-center justify-center">
                 <span>3</span>
               </div>
-              <div class="sideBar-content">
+              <div class="sideBar-content lg:hidden">
                 <p>Step 3</p>
                 <h4>Add-ons</h4>
               </div>
@@ -48,31 +48,32 @@
               <div class="circle w-8 h-8 rounded-full border border-white text-white flex items-center justify-center">
                 <span>4</span>
               </div>
-              <div class="sideBar-content">
+              <div class="sideBar-content lg:hidden">
                 <p>Step 4</p>
                 <h4>Summary</h4>
               </div>
             </div>
           </div>
-          <img src="/assets/images/bg-sidebar-desktop.svg" class="invisible" alt="">
+          <img src="/assets/images/bg-sidebar-desktop.svg" class="invisible lg:hidden" alt="">
+          <img src="/assets/images/bg-sidebar-mobile.svg" class="invisible hidden lg:block" alt="">
 
       </div>
        <!-- Sidebar end --> 
       <form action="" id="setupForm">
         <!-- Step 1 start -->
-        <div id="info" class="tab pt-10">
+        <div id="info" class="tab pt-10 lg:py-8">
           <h2>Personal info</h2>
           <p class="subHeading">Please provide your name, email address, and phone number.</p>
           <div class="space-y-4">
-            <div class="flex flex-col gap-y-2">
+            <div class="flex flex-col gap-y-2 lg:gap-y-1">
               <label for="name" class="text-marineBlue font-light">Name</label>
               <input type="text" id="name" placeholder="e.g. Stephen King" required onfocus="this.classList.remove('invalid')">
             </div>
-            <div class="flex flex-col gap-y-2">
+            <div class="flex flex-col gap-y-2 lg:gap-y-1">
               <label for="email" class="text-marineBlue font-light">Email Address</label>
               <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" required onfocus="this.classList.remove('invalid')">
             </div>
-            <div class="flex flex-col gap-y-2">
+            <div class="flex flex-col gap-y-2 lg:gap-y-1">
               <label for="number" class="text-marineBlue font-light">Phone Number</label>
               <input type="number" id="number" placeholder="e.g. +1 234 567 890" required onfocus="this.classList.remove('invalid')">
             </div>
@@ -80,7 +81,7 @@
         </div>
         <!-- Step 1 end -->
         <!-- Step 2 start -->
-        <div id="plan" class="tab pt-10">
+        <div id="plan" class="tab pt-10 lg:py-8">
           <h2>Select your plan</h2>
           <p class="subHeading">You have the option of monthly or yearly billing.</p>
           <!-- Options -->
@@ -142,7 +143,7 @@
         </div>
         <!-- Step 2 end -->
         <!-- Step 3 start -->
-        <div id="addons" class="tab pt-10">
+        <div id="addons" class="tab pt-10 lg:py-8">
           <h2>Pick add-ons</h2>
           <p class="subHeading">Add-ons help enhance your gaming experience.</p>
           <!-- Add-Ons -->
@@ -178,7 +179,7 @@
         </div>
         <!-- Step 3 end -->
         <!-- Step 4 start -->
-        <div id="finishingUp" class="tab pt-10">
+        <div id="finishingUp" class="tab pt-10 lg:py-8">
           <h2>Finishing up</h2>
           <p class="subHeading">Double-check everything looks OK before confirming.</p>
           <div class="bg-alabaster p-5 rounded-lg">
@@ -212,7 +213,7 @@
         </div>
         <!-- Step 5 end -->
         <!-- Submission -->
-        <div class="flex items-center justify-between bottom-0">
+        <div class="flex items-center justify-between lg:absolute lg:bottom-0 lg:right-0 lg:w-full lg:bg-white lg:py-3 lg:px-3">
           <button type="button" class="btn btn-secondary">Go Back</button>
           <button type="button" class="btn btn-primary ml-auto"></button>
         </div>

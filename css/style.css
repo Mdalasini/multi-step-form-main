@@ -1131,6 +1131,12 @@ input[type=number] {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@media (max-width: 429px) {
+  .sm\:rounded-none {
+    border-radius: 0px;
+  }
+}
+
 @media (max-width: 1023px) {
   .lg\:absolute {
     position: absolute;
@@ -1214,6 +1220,10 @@ input[type=number] {
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
     margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:rounded-none {
+    border-radius: 0px;
   }
 
   .lg\:bg-white {

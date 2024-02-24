@@ -5,7 +5,7 @@ const monthlyPrices = document.querySelectorAll('.monthlyPrice')
 const  yearlyPrices = document.querySelectorAll('.yearlyPrice')
 const toggle = document.getElementById('toggle')
 
-let currentTab = 4
+let currentTab = 0
 showTab(currentTab)
 
 function highlightCircle(n) {
@@ -276,9 +276,12 @@ function updateTotalDuration(duration) {
 }
 
 // Function to update total price
-function updateTotalPrice(adjustedPlanPrice, selectedAddonValues, duration) {
+function updateTotalPrice(adjustedPlanPrice, adjustedAddonPrices, duration) {
     const totalPrice = document.getElementById('totalPrice');
-    const total = adjustedPlanPrice + selectedAddonValues.reduce((acc, addon) => acc + addonPrices[addon], 0);
+    let total = adjustedPlanPrice 
+    adjustedAddonPrices.forEach((adjustedAddonPrice) => {
+        total += adjustedAddonPrice
+    });
     totalPrice.innerText = `${duration === 'Monthly' ? `$${total}/mo` : `$${total}/yr`}`;
 }
 
@@ -299,7 +302,14 @@ function performSetup() {
     updateTotalDuration(duration);
 
     const adjustedPlanPrice = duration === 'Yearly' ? planPrices[selectedPlan.value] * 10 : planPrices[selectedPlan.value];
-    updateTotalPrice(adjustedPlanPrice, selectedAddonValues, duration);
+    let adjustedAddonPrices = [] 
+    selectedAddonValues.map(addon => {
+        const addonPrice = addonPrices[addon];
+        const adjustedAddonPrice = duration === 'Yearly' ? addonPrice * 10 : addonPrice;
+        adjustedAddonPrices.push(adjustedAddonPrice)
+    })
+    console.log(adjustedAddonPrices)
+    updateTotalPrice(adjustedPlanPrice, adjustedAddonPrices, duration);
 }
 
 

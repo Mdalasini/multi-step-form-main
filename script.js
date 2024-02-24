@@ -27,9 +27,11 @@ function highlightCircle(n) {
 
         // Check if the current circle is the one to highlight
         if (i === adjustedIndex) {
-            currentCircle.classList.add('bg-pastelBlue', 'border-pastelBlue', 'text-marineBlue');
+            currentCircle.classList.add('highlightCircle');
+            currentCircle.classList.remove('defaultCircle');
         } else {
-            currentCircle.classList.remove('bg-pastelBlue', 'border-pastelBlue', 'text-marineBlue');
+            currentCircle.classList.add('defaultCircle');
+            currentCircle.classList.remove('highlightCircle');
         }
     }
 }

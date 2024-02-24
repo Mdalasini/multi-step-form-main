@@ -31,6 +31,18 @@ h5{
     @apply pl-28 pr-24 flex flex-col justify-between max-w-3xl lg:absolute lg:inset-0
 }
 
+.circle{
+    @apply w-8 h-8 rounded-full border flex items-center justify-center
+}
+
+.defaultCircle{
+    @apply border-white text-white bg-transparent
+}
+
+.highlightCircle{
+    @apply text-marineBlue bg-pastelBlue border-pastelBlue
+}
+
 
 .tab{
     @apply hidden lg:bg-white lg:rounded-lg lg:px-6 lg:absolute lg:top-24 lg:left-5 lg:w-[335px]
